@@ -15,6 +15,20 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
+// Google Docs Style Routing
+let path = window.location.pathname;
+let match = path.match(/^\/h\/([a-zA-Z0-9_-]+)/);
+let sessionId;
+
+if (!match && (path === '/' || path === '/index.html' || path === '')) {
+    sessionId = Math.random().toString(36).substring(2, 8);
+    window.location.replace(`/h/${sessionId}${window.location.search}`);
+} else if (match) {
+    sessionId = match[1];
+} else {
+    sessionId = 'default';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     /* -----------------------------------------------------------
        PAGE 1: Reveal Answers & Highlighting
@@ -116,11 +130,9 @@ document.addEventListener('DOMContentLoaded', () => {
     ----------------------------------------------------------- */
     const inputsToSave = document.querySelectorAll('.save-state');
     
-    // Check role and student ID (hardcoded for demo, normally passed via URL or Auth)
+    // Check role
     const urlParams = new URLSearchParams(window.location.search);
     const isTeacher = urlParams.get('role') === 'teacher';
-    const studentId = urlParams.get('student') || 'TTN'; // Default to TTN
-    const lessonId = 'lesson4';
 
     if (isTeacher) {
         inputsToSave.forEach(input => {
@@ -135,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 1. Listen for live updates from Firebase
-    const stateRef = ref(db, `handouts/${studentId}/${lessonId}`);
+    const stateRef = ref(db, `handouts/${sessionId}`);
     onValue(stateRef, (snapshot) => {
         const state = snapshot.val();
         if (state) {
@@ -162,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const val = (input.type === 'checkbox' || input.type === 'radio') ? input.checked : input.value;
                 
                 // Write to Firebase
-                set(ref(db, `handouts/${studentId}/${lessonId}/${id}`), {
+                set(ref(db, `handouts/${sessionId}/${id}`), {
                     value: val,
                     type: input.type
                 });
