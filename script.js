@@ -20,13 +20,10 @@ let path = window.location.pathname;
 let match = path.match(/^\/h\/([a-zA-Z0-9_-]+)/);
 let sessionId;
 
-if (!match && (path === '/' || path === '/index.html' || path === '')) {
-    sessionId = Math.random().toString(36).substring(2, 8);
-    window.location.replace(`/h/${sessionId}${window.location.search}`);
-} else if (match) {
+if (match) {
     sessionId = match[1];
 } else {
-    sessionId = 'default';
+    sessionId = 'default-homepage-lesson';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
