@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
 import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCU0w5ffPZEmcIB0_ZYMGmn6VD2vuVkrOc",
@@ -14,6 +15,8 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
 
 // Google Docs Style Routing
 let path = window.location.pathname;
@@ -125,57 +128,111 @@ document.addEventListener('DOMContentLoaded', () => {
     /* -----------------------------------------------------------
        LIVE SYNC (Firebase Realtime Database)
     ----------------------------------------------------------- */
-    const inputsToSave = document.querySelectorAll('.save-state');
-    
-    // Check role
-    const urlParams = new URLSearchParams(window.location.search);
-    const isTeacher = urlParams.get('role') === 'teacher';
+    const TEACHER_EMAIL = "laotung400@gmail.com";
+    const loginOverlay = document.getElementById('login-overlay');
+    const mainApp = document.getElementById('main-app');
+    const googleLoginBtn = document.getElementById('google-login-btn');
+    const logoutBtn = document.getElementById('logout-btn');
+    const userEmailDisplay = document.getElementById('user-email-display');
 
-    if (isTeacher) {
-        inputsToSave.forEach(input => {
-            if (input.type === 'checkbox' || input.type === 'radio') {
-                input.disabled = true;
-            } else {
-                input.readOnly = true;
-            }
-            input.style.backgroundColor = '#fdf2e9'; 
+    let firebaseListenersInitialized = false;
+
+    // Handle Google Login
+    if (googleLoginBtn) {
+        googleLoginBtn.addEventListener('click', () => {
+            signInWithPopup(auth, provider).catch(err => {
+                console.error("Login failed:", err);
+                alert("Login failed. Please try again.");
+            });
         });
-        document.title = "TEACHER VIEW - " + document.title;
     }
 
-    // 1. Listen for live updates from Firebase
-    const stateRef = ref(db, `handouts/${sessionId}`);
-    onValue(stateRef, (snapshot) => {
-        const state = snapshot.val();
-        if (state) {
-            inputsToSave.forEach(input => {
-                const id = input.id || input.name + '-' + input.value;
-                if (!id || !state[id]) return;
+    // Handle Logout
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+            signOut(auth);
+        });
+    }
+
+    // Listen to Auth State
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            // User is signed in
+            if (loginOverlay) loginOverlay.style.display = 'none';
+            if (mainApp) mainApp.style.display = 'flex';
+            if (userEmailDisplay) userEmailDisplay.textContent = user.email;
+
+            const isTeacher = (user.email === TEACHER_EMAIL);
+
+            if (isTeacher && !document.title.startsWith("TEACHER VIEW")) {
+                document.title = "TEACHER VIEW - " + document.title;
+            }
+
+            // Sync Logic
+            const inputsToSave = document.querySelectorAll('input[type="text"], input[type="radio"], input[type="checkbox"], textarea');
+            
+            if (isTeacher) {
+                inputsToSave.forEach(input => {
+                    input.readOnly = true;
+                    input.disabled = true;
+                    if(input.type === 'text' || input.tagName === 'TEXTAREA') {
+                        input.style.backgroundColor = '#fff3cd'; // Highlight student inputs in yellow
+                    }
+                });
+            } else {
+                inputsToSave.forEach(input => {
+                    input.readOnly = false;
+                    input.disabled = false;
+                    if(input.type === 'text' || input.tagName === 'TEXTAREA') {
+                        input.style.backgroundColor = ''; 
+                    }
+                });
+            }
+
+            // Initialize Firebase sync only once per session
+            if (!firebaseListenersInitialized) {
+                firebaseListenersInitialized = true;
                 
-                if (input.type === 'checkbox' || input.type === 'radio') {
-                    input.checked = state[id].value;
-                } else {
-                    input.value = state[id].value;
+                // 1. Listen for live updates from Firebase
+                const stateRef = ref(db, `handouts/${sessionId}`);
+                onValue(stateRef, (snapshot) => {
+                    const state = snapshot.val();
+                    if (state) {
+                        inputsToSave.forEach(input => {
+                            const id = input.id || input.name + '-' + input.value;
+                            if (!id || !state[id]) return;
+                            
+                            if (input.type === 'checkbox' || input.type === 'radio') {
+                                input.checked = state[id].value;
+                            } else {
+                                input.value = state[id].value;
+                            }
+                        });
+                    }
+                });
+
+                // 2. Emit updates when student types
+                if (!isTeacher) {
+                    inputsToSave.forEach(input => {
+                        input.addEventListener('input', () => {
+                            const id = input.id || input.name + '-' + input.value;
+                            if (!id) return;
+
+                            const val = (input.type === 'checkbox' || input.type === 'radio') ? input.checked : input.value;
+                            
+                            // Write to Firebase
+                            set(ref(db, `handouts/${sessionId}/${id}`), {
+                                value: val,
+                                type: input.type
+                            });
+                        });
+                    });
                 }
-            });
+            }
+        } else {
+            // User is signed out
+            if (loginOverlay) loginOverlay.style.display = 'flex';
+            if (mainApp) mainApp.style.display = 'none';
         }
     });
-
-    // 2. Emit updates when student types
-    if (!isTeacher) {
-        inputsToSave.forEach(input => {
-            input.addEventListener('input', () => {
-                const id = input.id || input.name + '-' + input.value;
-                if (!id) return;
-
-                const val = (input.type === 'checkbox' || input.type === 'radio') ? input.checked : input.value;
-                
-                // Write to Firebase
-                set(ref(db, `handouts/${sessionId}/${id}`), {
-                    value: val,
-                    type: input.type
-                });
-            });
-        });
-    }
 });
