@@ -61,19 +61,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>Teacher Dashboard</h1>
-        <p>Welcome to your interactive teaching platform. Generate a new session below. This will create a unique, randomized URL for your student.</p>
-        <button id="launch-btn">🚀 Create New Handout Session</button>
+        <h1>IELTS Interactive Handouts</h1>
+        <p>Platform Homepage</p>
     </div>
-
-    <script>
-        document.getElementById('launch-btn').addEventListener('click', () => {
-            // Generate a random 8 character slug
-            const randomSlug = Math.random().toString(36).substring(2, 10);
-            
-            // Redirect to the new lesson viewer URL with teacher mode enabled
-            window.location.href = `/h/${randomSlug}?role=teacher`;
-        });
-    </script>
 </body>
 </html>
