@@ -1,6 +1,6 @@
 {
   "framework": null,
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/h/(.*)", "destination": "/lesson.html" }
   ]
 }

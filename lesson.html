@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LESSON 4 - Where You Live Now</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>LESSON 4</h2>
+                <button class="toggle-sidebar-btn" id="toggle-sidebar" aria-label="Toggle Sidebar">☰</button>
+            </div>
+            <ul class="nav-links">
+                <li><button class="nav-btn active" data-page="page-1">1. Forecast Focus</button></li>
+                <li><button class="nav-btn" data-page="page-2">2. Warm-up</button></li>
+                <li><button class="nav-btn" data-page="page-3">3. Memory Bank</button></li>
+                <li><button class="nav-btn" data-page="page-4">4. Micro Vocabulary</button></li>
+                <li><button class="nav-btn" data-page="page-5">5. Controlled Practice</button></li>
+                <li><button class="nav-btn" data-page="page-6">6. Prompt Ladder</button></li>
+                <li><button class="nav-btn" data-page="page-7">7. Stretch Questions</button></li>
+                <li><button class="nav-btn" data-page="page-8">8. Homework</button></li>
+                <li><button class="nav-btn" data-page="page-9">9. Repair List</button></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <!-- PAGE 1 -->
+            <section class="page active" id="page-1">
+                <header class="main-header">
+                    <h1>LESSON 4</h1>
+                    <h2>Where You Live Now: Home, City & Neighbourhood</h2>
+                </header>
+
+                <div class="metadata-bar">
+                    <span><span class="icon">⏱</span> Duration: 60 minutes</span>
+                    <span class="divider"></span>
+                    <span><span class="icon">👤</span> Format: 1-on-1</span>
+                    <span class="divider"></span>
+                    <span><span class="icon">🎓</span> Student: Van</span>
+                    <span class="divider"></span>
+                    <span><span class="icon">👨‍🏫</span> Teacher: Le Khanh Tung</span>
+                </div>
+                
+                <div class="forecast-area">
+                    <span class="icon-location">📍</span> <p><strong>Main IELTS Forecast Area:</strong> Part 1 - Where You Live Now</p>
+                </div>
+
+                <div class="grid-2-col">
+                    <section class="card goals-card">
+                        <div class="card-header">
+                            <span class="icon-circle">🎯</span>
+                            <h3>Today's 3 goals</h3>
+                        </div>
+                        <ol class="interactive-list goals-list">
+                            <li>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="custom-checkbox save-state" id="goal-1">
+                                    <span class="checkmark"></span>
+                                    <span class="text">I can answer home / city / neighbourhood questions using real details from my life.</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="custom-checkbox save-state" id="goal-2">
+                                    <span class="checkmark"></span>
+                                    <span class="text">I can use small useful phrases, not long memorised answers.</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="custom-checkbox save-state" id="goal-3">
+                                    <span class="checkmark"></span>
+                                    <span class="text">I can finish clearly without adding "yeah."</span>
+                                </label>
+                            </li>
+                        </ol>
+                    </section>
+
+                    <section class="card reminders-card">
+                        <div class="card-header">
+                            <span class="icon-circle">💡</span>
+                            <h3>Reminder from previous lessons</h3>
+                        </div>
+                        <ul class="reminders-list">
+                            <li><strong>Lesson 1:</strong> When my idea is finished, I stop.</li>
+                            <li><strong>Lesson 2:</strong> Real memories make my answer easier to speak.</li>
+                            <li><strong>Lesson 3:</strong> If I forget the exact English word, I can describe it.</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="quote-box">
+                    <p>“Truth first. English second.”</p>
+                </div>
+
+                <section class="card speaking-rule-card">
+                    <div class="card-header solid">
+                        <span class="icon-megaphone">📢</span>
+                        <h3>Today's main speaking rule</h3>
+                    </div>
+                    
+                    <div class="rule-highlight">
+                        <p>Direct answer + one real detail + stop.</p>
+                    </div>
+                    
+                    <div class="examples-grid">
+                        <div class="example-box">
+                            <div class="example bad">
+                                <h4><span class="icon-x">❌</span> Not so good:</h4>
+                                <p>I live in Viet Tri City. Yeah.</p>
+                            </div>
+                            <button class="reveal-btn" data-target="better1" aria-expanded="false">
+                                <span class="btn-text">Reveal Better Answer</span>
+                                <span class="btn-icon">➔</span>
+                            </button>
+                            <div class="example better hidden" id="better1">
+                                <h4><span class="icon-check">✅</span> Better:</h4>
+                                <p>I live in Viet Tri City, which is in Phu Tho province.</p>
+                            </div>
+                        </div>
+
+                        <div class="example-box">
+                            <div class="example bad">
+                                <h4><span class="icon-x">❌</span> Not so good:</h4>
+                                <p>My favourite room is the living room because it is good and I like it. Yeah.</p>
+                            </div>
+                            <button class="reveal-btn" data-target="better2" aria-expanded="false">
+                                <span class="btn-text">Reveal Better Answer</span>
+                                <span class="btn-icon">➔</span>
+                            </button>
+                            <div class="example better hidden" id="better2">
+                                <h4><span class="icon-check">✅</span> Better:</h4>
+                                <p>My favourite room is the living room because I can spend time with my family there.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card page-content-card">
+                    <div class="content-header">
+                        <div class="badge-group">
+                            <div class="icon-home-wrapper">
+                                <span class="icon-home">🏠</span>
+                            </div>
+                            <span class="badge">PAGE 1 - LIVE</span>
+                        </div>
+                        <h3 class="forecast-title">Forecast Focus: Where You Live Now</h3>
+                    </div>
+                    
+                    <div class="content-body">
+                        <p class="subtitle">These questions come from the current IELTS Speaking forecast.</p>
+                        
+                        <div class="questions-grid">
+                            <div class="core-questions">
+                                <h4>Core questions for today</h4>
+                                <p class="sub-text">We will practise these questions in class:</p>
+                                <ol class="question-list">
+                                    <li class="interactive-question"><span>Which town or city do you live in now?</span></li>
+                                    <li class="interactive-question"><span>Do you live in a house or an apartment?</span></li>
+                                    <li class="interactive-question"><span>What is your favourite room in your home? Why?</span></li>
+                                    <li class="interactive-question"><span>What things make your home pleasant to live in? Why?</span></li>
+                                    <li class="interactive-question"><span>Are the people in your neighbourhood nice and friendly?</span></li>
+                                    <li class="interactive-question"><span>Are there any things you don't like about your area? What are they?</span></li>
+                                </ol>
+                            </div>
+                            
+                            <div class="side-questions">
+                                <div class="stretch-questions">
+                                    <h4>Stretch questions</h4>
+                                    <p class="sub-text">We may practise these if there is enough time:</p>
+                                    <ol start="7" class="question-list">
+                                        <li class="interactive-question"><span>Do you know any of your neighbours?</span></li>
+                                        <li class="interactive-question"><span>Do you think you will continue to live there for a long time? Why / why not?</span></li>
+                                    </ol>
+                                </div>
+                                
+                                <div class="homework-questions">
+                                    <h4>Homework / later questions</h4>
+                                    <p class="sub-text">These questions are useful, but we do not need to practise them deeply today:</p>
+                                    <ol start="9" class="question-list">
+                                        <li class="interactive-question"><span>What are some changes in the area recently?</span></li>
+                                        <li class="interactive-question"><span>Do you know any famous people in your area?</span></li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-box">
+                        <div class="icon-star-wrapper">
+                            <span class="icon-star">⭐</span>
+                        </div>
+                        <div class="footer-content">
+                            <div class="footer-text">
+                                <h4>Do not try to answer all questions perfectly today</h4>
+                                <p>Today's target is not perfect English.<br>Today's target is:</p>
+                            </div>
+                            <div class="footer-highlight">
+                                <p>“clear answer + real detail + clean ending”</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- PAGE 2 -->
+            <section class="page hidden" id="page-2">
+                <header class="page-header">
+                    <div class="badge-group center-badge">
+                        <div class="icon-home-wrapper"><span class="icon-home">🏠</span></div>
+                        <span class="badge">PAGE 2 - LIVE</span>
+                    </div>
+                    <h1>Warm-up: Can I Remember Food Answers?</h1>
+                </header>
+
+                <div class="instruction-box card">
+                    <div class="icon-wrapper"><span class="icon-target">🎯</span></div>
+                    <ul>
+                        <li>Before learning the new topic, try to remember food ideas from Lesson 3.</li>
+                        <li>Do not look at old notes.</li>
+                        <li>Answer with keywords first.</li>
+                    </ul>
+                </div>
+
+                <div class="question-block card">
+                    <div class="question-header">
+                        <span class="q-icon">💬</span>
+                        <span>Question 1</span>
+                    </div>
+                    <h3>What local food is popular in your city?</h3>
+                    <p class="keywords-label">Keywords I remember:</p>
+                    <ul class="input-list">
+                        <li><input type="text" class="keyword-input save-state" id="p2-q1-kw1" placeholder="Type keyword..."></li>
+                        <li><input type="text" class="keyword-input save-state" id="p2-q1-kw2" placeholder="Type keyword..."></li>
+                        <li><input type="text" class="keyword-input save-state" id="p2-q1-kw3" placeholder="Type keyword..."></li>
+                    </ul>
+                    <div class="answer-check">
+                        <span class="check-label">Can I answer?</span>
+                        <label><input type="radio" name="p2-q1-ans" value="independently" class="save-state"> independently</label>
+                        <label><input type="radio" name="p2-q1-ans" value="cue" class="save-state"> after teacher cue</label>
+                        <label><input type="radio" name="p2-q1-ans" value="notyet" class="save-state"> not yet</label>
+                    </div>
+                </div>
+
+                <div class="question-block card">
+                    <div class="question-header">
+                        <span class="q-icon">💬</span>
+                        <span>Question 2</span>
+                    </div>
+                    <h3>What food did you like when you were a child?</h3>
+                    <p class="keywords-label">Keywords I remember:</p>
+                    <ul class="input-list">
+                        <li><input type="text" class="keyword-input save-state" id="p2-q2-kw1" placeholder="Type keyword..."></li>
+                        <li><input type="text" class="keyword-input save-state" id="p2-q2-kw2" placeholder="Type keyword..."></li>
+                        <li><input type="text" class="keyword-input save-state" id="p2-q2-kw3" placeholder="Type keyword..."></li>
+                    </ul>
+                    <div class="answer-check">
+                        <span class="check-label">Can I answer?</span>
+                        <label><input type="radio" name="p2-q2-ans" value="independently" class="save-state"> independently</label>
+                        <label><input type="radio" name="p2-q2-ans" value="cue" class="save-state"> after teacher cue</label>
+                        <label><input type="radio" name="p2-q2-ans" value="notyet" class="save-state"> not yet</label>
+                    </div>
+                </div>
+
+                <div class="question-block card">
+                    <div class="question-header">
+                        <span class="q-icon">💬</span>
+                        <span>Question 3</span>
+                    </div>
+                    <h3>Do you eat different food at different times of the year?</h3>
+                    <p class="keywords-label">Keywords I remember:</p>
+                    <ul class="input-list">
+                        <li><input type="text" class="keyword-input save-state" id="p2-q3-kw1" placeholder="Type keyword..."></li>
+                        <li><input type="text" class="keyword-input save-state" id="p2-q3-kw2" placeholder="Type keyword..."></li>
+                        <li><input type="text" class="keyword-input save-state" id="p2-q3-kw3" placeholder="Type keyword..."></li>
+                    </ul>
+                    <div class="answer-check">
+                        <span class="check-label">Can I answer?</span>
+                        <label><input type="radio" name="p2-q3-ans" value="independently" class="save-state"> independently</label>
+                        <label><input type="radio" name="p2-q3-ans" value="cue" class="save-state"> after teacher cue</label>
+                        <label><input type="radio" name="p2-q3-ans" value="notyet" class="save-state"> not yet</label>
+                    </div>
+                </div>
+
+                <div class="self-check-box card">
+                    <div class="self-check-header">
+                        <div class="icon-star-wrapper"><span class="icon-star">⭐</span></div>
+                        <div class="self-check-title">
+                            <h3>Self-check</h3>
+                            <p>After answering, check:</p>
+                        </div>
+                    </div>
+                    <div class="self-check-grid">
+                        <label class="checkbox-container"><input type="checkbox" class="custom-checkbox save-state" id="sc-1"><span class="checkmark"></span><span class="text">I did not end with "yeah."</span></label>
+                        <label class="checkbox-container"><input type="checkbox" class="custom-checkbox save-state" id="sc-2"><span class="checkmark"></span><span class="text">I used one real memory.</span></label>
+                        <label class="checkbox-container"><input type="checkbox" class="custom-checkbox save-state" id="sc-3"><span class="checkmark"></span><span class="text">I stopped when my idea finished.</span></label>
+                        <label class="checkbox-container"><input type="checkbox" class="custom-checkbox save-state" id="sc-4"><span class="checkmark"></span><span class="text">I did not try to make a perfect sentence first.</span></label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE 3 -->
+            <section class="page hidden" id="page-3">
+                <header class="page-header">
+                    <div class="badge-group center-badge">
+                        <div class="icon-home-wrapper"><span class="icon-home">🏠</span></div>
+                        <span class="badge">PAGE 3 - LIVE</span>
+                    </div>
+                    <h1>My Real Memory Bank: Home, City & Neighbourhood</h1>
+                </header>
+
+                <div class="memory-bank-rules">
+                    <div class="rule"><span class="icon-pen">✏️</span> Write keywords only.</div>
+                    <div class="rule-divider"></div>
+                    <div class="rule"><span class="icon-x-red">❌</span> Do not write full answers.</div>
+                </div>
+
+                <div class="table-section">
+                    <div class="table-badge">1. My city</div>
+                    <table class="memory-table">
+                        <thead>
+                            <tr>
+                                <th>Question</th>
+                                <th>My keywords</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Which city do I live in?</td>
+                                <td><input type="text" class="table-input save-state" id="t1-r1" placeholder="e.g. Viet Tri City"></td>
+                            </tr>
+                            <tr>
+                                <td>Which province?</td>
+                                <td><input type="text" class="table-input save-state" id="t1-r2" placeholder="e.g. Phu Tho province"></td>
+                            </tr>
+                            <tr>
+                                <td>Is it my hometown?</td>
+                                <td><input type="text" class="table-input save-state" id="t1-r3" placeholder="e.g. yes"></td>
+                            </tr>
+                            <tr>
+                                <td>What is good about it?</td>
+                                <td><input type="text" class="table-input save-state" id="t1-r4" placeholder="e.g. friendly / familiar / not too busy"></td>
+                            </tr>
+                            <tr>
+                                <td>What is not good?</td>
+                                <td><input type="text" class="table-input save-state" id="t1-r5" placeholder="e.g. traffic / pollution / crowded roads"></td>
+                            </tr>
+                            <tr>
+                                <td>Do I want to stay there forever?</td>
+                                <td><input type="text" class="table-input save-state" id="t1-r6" placeholder="e.g. maybe not soon / study in another city"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-section">
+                    <div class="table-badge">2. My home</div>
+                    <table class="memory-table">
+                        <thead>
+                            <tr>
+                                <th>Question</th>
+                                <th>My keywords</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>House or apartment?</td>
+                                <td><input type="text" class="table-input save-state" id="t2-r1" placeholder="e.g. house"></td>
+                            </tr>
+                            <tr>
+                                <td>How many floors?</td>
+                                <td><input type="text" class="table-input save-state" id="t2-r2" placeholder="e.g. two floors"></td>
+                            </tr>
+                            <tr>
+                                <td>Anything outside?</td>
+                                <td><input type="text" class="table-input save-state" id="t2-r3" placeholder="e.g. small garden"></td>
+                            </tr>
+                            <tr>
+                                <td>Big or normal?</td>
+                                <td><input type="text" class="table-input save-state" id="t2-r4" placeholder="e.g. normal house"></td>
+                            </tr>
+                            <tr>
+                                <td>Comfortable?</td>
+                                <td><input type="text" class="table-input save-state" id="t2-r5" placeholder="e.g. yes / enough for my family"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- PAGE 4 -->
+            <section class="page hidden" id="page-4">
+                <header class="page-header">
+                    <div class="badge-group center-badge">
+                        <div class="icon-home-wrapper"><span class="icon-home">🏠</span></div>
+                        <span class="badge">PAGE 4 - LIVE</span>
+                    </div>
+                    <h1>Micro Vocabulary: Only What I Need Today</h1>
+                </header>
+
+                <div class="instruction-box card">
+                    <div class="icon-wrapper"><span class="icon-target">💡</span></div>
+                    <ul>
+                        <li>Do not learn too many words.</li>
+                        <li>For each question, use: <strong>3 keywords + 1 useful phrase + 1 error warning</strong></li>
+                    </ul>
+                </div>
+
+                <div class="grid-2-col vocab-grid">
+                    <!-- Vocab 1 -->
+                    <div class="card vocab-card">
+                        <div class="question-header">
+                            <span class="q-badge">1</span>
+                            <h4>Which town or city do you live in now?</h4>
+                        </div>
+                        <div class="vocab-section keywords-sec">
+                            <h5><span class="icon-key">🔑</span> 3 keywords</h5>
+                            <ul>
+                                <li>Viet Tri</li>
+                                <li>Phu Tho</li>
+                                <li>hometown</li>
+                            </ul>
+                        </div>
+                        <div class="vocab-section phrase-sec">
+                            <h5><span class="icon-chat">💬</span> Useful phrase</h5>
+                            <div class="phrase-box">“I currently live in...”</div>
+                        </div>
+                        <div class="vocab-section error-sec">
+                            <h5><span class="icon-alert">⚠️</span> Error warning</h5>
+                            <p><strong>Say:</strong> "my city"</p>
+                            <p><strong>Do not say:</strong> "my cities"</p>
+                        </div>
+                    </div>
+
+                    <!-- Vocab 2 -->
+                    <div class="card vocab-card">
+                        <div class="question-header">
+                            <span class="q-badge">2</span>
+                            <h4>Do you live in a house or an apartment?</h4>
+                        </div>
+                        <div class="vocab-section keywords-sec">
+                            <h5><span class="icon-key">🔑</span> 3 keywords</h5>
+                            <ul>
+                                <li>house</li>
+                                <li>two floors</li>
+                                <li>small garden</li>
+                            </ul>
+                        </div>
+                        <div class="vocab-section phrase-sec">
+                            <h5><span class="icon-chat">💬</span> Useful phrase</h5>
+                            <div class="phrase-box">“I live in a house with two floors.”</div>
+                        </div>
+                        <div class="vocab-section error-sec">
+                            <h5><span class="icon-alert">⚠️</span> Error warning</h5>
+                            <p><strong>Say:</strong> "a house that has two floors"</p>
+                            <p><strong>Do not say:</strong> "a house that have two floors"</p>
+                        </div>
+                    </div>
+
+                    <!-- Vocab 3 -->
+                    <div class="card vocab-card">
+                        <div class="question-header">
+                            <span class="q-badge">3</span>
+                            <h4>What is your favourite room in your home?</h4>
+                        </div>
+                        <div class="vocab-section keywords-sec">
+                            <h5><span class="icon-key">🔑</span> 3 keywords</h5>
+                            <ul>
+                                <li>living room</li>
+                                <li>family</li>
+                                <li>watch TV / talk</li>
+                            </ul>
+                        </div>
+                        <div class="vocab-section phrase-sec">
+                            <h5><span class="icon-chat">💬</span> Useful phrase</h5>
+                            <div class="phrase-box">“My favourite room is...”</div>
+                        </div>
+                        <div class="vocab-section error-sec">
+                            <h5><span class="icon-alert">⚠️</span> Error warning</h5>
+                            <p><strong>Say:</strong> "my family"</p>
+                            <p><strong>Do not say:</strong> "my families"</p>
+                        </div>
+                    </div>
+
+                    <!-- Vocab 4 -->
+                    <div class="card vocab-card">
+                        <div class="question-header">
+                            <span class="q-badge">4</span>
+                            <h4>What things make your home pleasant to live in?</h4>
+                        </div>
+                        <div class="vocab-section keywords-sec">
+                            <h5><span class="icon-key">🔑</span> 3 keywords</h5>
+                            <ul>
+                                <li>many people</li>
+                                <li>lively</li>
+                                <li>comfortable</li>
+                            </ul>
+                        </div>
+                        <div class="vocab-section phrase-sec">
+                            <h5><span class="icon-chat">💬</span> Useful phrase</h5>
+                            <div class="phrase-box">“It feels lively because...”</div>
+                        </div>
+                        <div class="vocab-section error-sec">
+                            <h5><span class="icon-alert">⚠️</span> Error warning</h5>
+                            <p><strong>Say:</strong> "for a long time"</p>
+                            <p><strong>Do not say:</strong> "for a long term / long terms"</p>
+                        </div>
+                    </div>
+
+                    <!-- Vocab 5 -->
+                    <div class="card vocab-card">
+                        <div class="question-header">
+                            <span class="q-badge">5</span>
+                            <h4>Are the people in your neighbourhood friendly?</h4>
+                        </div>
+                        <div class="vocab-section keywords-sec">
+                            <h5><span class="icon-key">🔑</span> 3 keywords</h5>
+                            <ul>
+                                <li>rarely meet</li>
+                                <li>parents talk</li>
+                                <li>friendly</li>
+                            </ul>
+                        </div>
+                        <div class="vocab-section phrase-sec">
+                            <h5><span class="icon-chat">💬</span> Useful phrase</h5>
+                            <div class="phrase-box">“From what my parents say...”</div>
+                        </div>
+                        <div class="vocab-section error-sec">
+                            <h5><span class="icon-alert">⚠️</span> Error warning</h5>
+                            <p><strong>Say:</strong> "I don't meet them very often."</p>
+                            <p><strong>Do not say:</strong> "I don't meet them much."</p>
+                        </div>
+                    </div>
+
+                    <!-- Vocab 6 -->
+                    <div class="card vocab-card">
+                        <div class="question-header">
+                            <span class="q-badge">6</span>
+                            <h4>Are there any things you don't like about your area?</h4>
+                        </div>
+                        <div class="vocab-section keywords-sec">
+                            <h5><span class="icon-key">🔑</span> 3 keywords</h5>
+                            <ul>
+                                <li>traffic</li>
+                                <li>pollution</li>
+                                <li>vehicles</li>
+                            </ul>
+                        </div>
+                        <div class="vocab-section phrase-sec">
+                            <h5><span class="icon-chat">💬</span> Useful phrase</h5>
+                            <div class="phrase-box">“One thing I don't really like is...”</div>
+                        </div>
+                        <div class="vocab-section error-sec">
+                            <h5><span class="icon-alert">⚠️</span> Error warning</h5>
+                            <p><strong>Say:</strong> "travel around the city"</p>
+                            <p><strong>Do not say:</strong> "transfer from this place to another place"</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE 5 -->
+            <section class="page hidden" id="page-5">
+                <header class="page-header">
+                    <div class="badge-group center-badge">
+                        <div class="icon-home-wrapper"><span class="icon-home">🏠</span></div>
+                        <span class="badge">PAGE 5 - LIVE</span>
+                    </div>
+                    <h1>Controlled Forecast Practice</h1>
+                </header>
+
+                <div class="memory-bank-rules" style="margin-bottom: 2rem;">
+                    <div class="rule"><span class="icon-target">🎯</span> Use the keywords.</div>
+                    <div class="rule-divider"></div>
+                    <div class="rule"><span class="icon-chat">💬</span> Do not read a full answer.</div>
+                    <div class="rule-divider"></div>
+                    <div class="rule"><span class="icon-mic">🎤</span> Speak simply.</div>
+                </div>
+
+                <!-- Q1 -->
+                <div class="card practice-card">
+                    <div class="practice-header">
+                        <span class="q-badge">1</span> <h3>Question 1: Which town or city do you live in now?</h3>
+                    </div>
+                    <div class="practice-body">
+                        <div class="practice-left">
+                            <div class="practice-info">
+                                <h5><span class="icon-key">🔑</span> Keywords</h5>
+                                <ul><li>Viet Tri</li><li>Phu Tho</li><li>hometown</li></ul>
+                            </div>
+                            <div class="practice-info">
+                                <h5><span class="icon-star">⭐</span> Answer shape</h5>
+                                <div class="shape-box">"Direct answer + province + one simple detail"</div>
+                            </div>
+                        </div>
+                        <div class="practice-right">
+                            <h5><span class="icon-pen">✏️</span> Try</h5>
+                            <p>I currently live in <input type="text" class="inline-input save-state" id="p5-q1-1" placeholder="...">, which is in <input type="text" class="inline-input save-state" id="p5-q1-2" placeholder="...">. It is also <input type="text" class="inline-input save-state" id="p5-q1-3" placeholder="...">.</p>
+                            <p class="now-speak"><strong>Now answer without reading.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="card practice-card">
+                    <div class="practice-header">
+                        <span class="q-badge">2</span> <h3>Question 2: Do you live in a house or an apartment?</h3>
+                    </div>
+                    <div class="practice-body">
+                        <div class="practice-left">
+                            <div class="practice-info">
+                                <h5><span class="icon-key">🔑</span> Keywords</h5>
+                                <ul><li>house</li><li>two floors</li><li>small garden</li><li>normal house</li></ul>
+                            </div>
+                            <div class="practice-info">
+                                <h5><span class="icon-star">⭐</span> Answer shape</h5>
+                                <div class="shape-box">"Direct answer + one detail about the house + stop"</div>
+                            </div>
+                        </div>
+                        <div class="practice-right">
+                            <h5><span class="icon-pen">✏️</span> Try</h5>
+                            <p>I live in <input type="text" class="inline-input save-state" id="p5-q2-1" placeholder="...">. It has <input type="text" class="inline-input save-state" id="p5-q2-2" placeholder="..."> and <input type="text" class="inline-input save-state" id="p5-q2-3" placeholder="...">.</p>
+                            <p class="now-speak"><strong>Now answer without reading.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="card practice-card">
+                    <div class="practice-header">
+                        <span class="q-badge">3</span> <h3>Question 3: What is your favourite room in your home? Why?</h3>
+                    </div>
+                    <div class="practice-body">
+                        <div class="practice-left">
+                            <div class="practice-info">
+                                <h5><span class="icon-key">🔑</span> Keywords</h5>
+                                <ul><li>living room</li><li>family</li><li>watch TV</li><li>talk after dinner</li></ul>
+                            </div>
+                            <div class="practice-info">
+                                <h5><span class="icon-star">⭐</span> Answer shape</h5>
+                                <div class="shape-box">"Favourite room + reason + real activity"</div>
+                            </div>
+                        </div>
+                        <div class="practice-right">
+                            <h5><span class="icon-pen">✏️</span> Try</h5>
+                            <p>My favourite room is <input type="text" class="inline-input save-state" id="p5-q3-1" placeholder="..."> because I can <input type="text" class="inline-input save-state" id="p5-q3-2" placeholder="..."> there. For example, I sometimes <input type="text" class="inline-input save-state" id="p5-q3-3" placeholder="..."> with my family.</p>
+                            <p class="now-speak"><strong>Now answer without reading.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="card practice-card">
+                    <div class="practice-header">
+                        <span class="q-badge">4</span> <h3>Question 4: What things make your home pleasant to live in? Why?</h3>
+                    </div>
+                    <div class="practice-body">
+                        <div class="practice-left">
+                            <div class="practice-info">
+                                <h5><span class="icon-key">🔑</span> Keywords</h5>
+                                <ul><li>many family members</li><li>lively</li><li>comfortable</li><li>not lonely</li></ul>
+                            </div>
+                            <div class="practice-info">
+                                <h5><span class="icon-star">⭐</span> Answer shape</h5>
+                                <div class="shape-box">"What makes it pleasant + feeling + reason"</div>
+                            </div>
+                        </div>
+                        <div class="practice-right">
+                            <h5><span class="icon-pen">✏️</span> Try</h5>
+                            <p>What makes my home pleasant is that <input type="text" class="inline-input save-state" id="p5-q4-1" placeholder="...">. It feels <input type="text" class="inline-input save-state" id="p5-q4-2" placeholder="...">, so I rarely <input type="text" class="inline-input save-state" id="p5-q4-3" placeholder="...">.</p>
+                            <p class="now-speak"><strong>Now answer without reading.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="card practice-card">
+                    <div class="practice-header">
+                        <span class="q-badge">5</span> <h3>Question 5: Are the people in your neighbourhood nice and friendly?</h3>
+                    </div>
+                    <div class="practice-body">
+                        <div class="practice-left">
+                            <div class="practice-info">
+                                <h5><span class="icon-key">🔑</span> Keywords</h5>
+                                <ul><li>rarely meet them</li><li>busy with school</li><li>parents talk to them</li><li>friendly / hospitable</li></ul>
+                            </div>
+                            <div class="practice-info">
+                                <h5><span class="icon-star">⭐</span> Answer shape</h5>
+                                <div class="shape-box">"Truth + reason + indirect evidence"</div>
+                            </div>
+                        </div>
+                        <div class="practice-right">
+                            <h5><span class="icon-pen">✏️</span> Try</h5>
+                            <p>To be honest, I don't <input type="text" class="inline-input save-state" id="p5-q5-1" placeholder="..."> because <input type="text" class="inline-input save-state" id="p5-q5-2" placeholder="...">. But from what my parents say, they are quite <input type="text" class="inline-input save-state" id="p5-q5-3" placeholder="...">.</p>
+                            <p class="now-speak"><strong>Now answer without reading.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q6 -->
+                <div class="card practice-card">
+                    <div class="practice-header">
+                        <span class="q-badge">6</span> <h3>Question 6: Are there any things you don't like about your area? What are they?</h3>
+                    </div>
+                    <div class="practice-body">
+                        <div class="practice-left">
+                            <div class="practice-info">
+                                <h5><span class="icon-key">🔑</span> Keywords</h5>
+                                <ul><li>traffic</li><li>vehicles</li><li>polluted</li><li>inconvenient</li></ul>
+                            </div>
+                            <div class="practice-info">
+                                <h5><span class="icon-star">⭐</span> Answer shape</h5>
+                                <div class="shape-box">"One problem + example + result"</div>
+                            </div>
+                        </div>
+                        <div class="practice-right">
+                            <h5><span class="icon-pen">✏️</span> Try</h5>
+                            <p>One thing I don't really like about my area is <input type="text" class="inline-input save-state" id="p5-q6-1" placeholder="...">. Sometimes there are too many <input type="text" class="inline-input save-state" id="p5-q6-2" placeholder="...">, so it is not very convenient to <input type="text" class="inline-input save-state" id="p5-q6-3" placeholder="...">.</p>
+                            <p class="now-speak"><strong>Now answer without reading.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE 6 -->
+            <section class="page hidden" id="page-6">
+                <header class="page-header">
+                    <div class="badge-group center-badge">
+                        <div class="icon-home-wrapper"><span class="icon-home">🏠</span></div>
+                        <span class="badge" style="background-color: var(--accent-gold); color: white;">PAGE 6 - LIVE / OPTIONAL</span>
+                    </div>
+                    <h1>Prompt Ladder: Build the Answer Slowly</h1>
+                </header>
+
+                <div class="instruction-box card" style="justify-content: center; text-align: center;">
+                    <p style="font-size: 1.1rem; font-weight: 500;">If I cannot answer immediately, I do not panic. <strong>I answer in steps.</strong></p>
+                </div>
+
+                <div class="ladder-diagram card">
+                    <div class="ladder-step step-fact">
+                        <div class="ladder-icon">🪜 1</div>
+                        <div class="ladder-desc">
+                            <h4>Ladder 1: Fact</h4>
+                            <p>What is true in my life?</p>
+                        </div>
+                        <div class="ladder-example">
+                            <span class="icon-chat">💬</span> Example: "I live in a house."
+                        </div>
+                    </div>
+                    <div class="ladder-step step-detail">
+                        <div class="ladder-icon">🪜 2</div>
+                        <div class="ladder-desc">
+                            <h4>Ladder 2: Detail</h4>
+                            <p>Add one real detail.</p>
+                        </div>
+                        <div class="ladder-example">
+                            <span class="icon-chat">💬</span> Example: "It has two floors and a small garden."
+                        </div>
+                    </div>
+                    <div class="ladder-step step-feeling">
+                        <div class="ladder-icon">🪜 3</div>
+                        <div class="ladder-desc">
+                            <h4>Ladder 3: Feeling</h4>
+                            <p>How do I feel about it?</p>
+                        </div>
+                        <div class="ladder-example">
+                            <span class="icon-chat">💬</span> Example: "It feels comfortable for my family."
+                        </div>
+                    </div>
+                    <div class="ladder-step step-final">
+                        <div class="ladder-icon">🪜 4</div>
+                        <div class="ladder-desc">
+                            <h4>Ladder 4: Final answer</h4>
+                            <p>Put it together simply.</p>
+                        </div>
+                        <div class="ladder-example">
+                            <span class="icon-chat">💬</span> Example: "I live in a house with two floors and a small garden. It is not very big, but it feels comfortable for my family."
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q1 -->
+                <div class="card ladder-practice">
+                    <div class="ladder-practice-header">
+                        <div class="badge-blue"><span class="icon-pen">✏️</span> Practice with Question 1</div>
+                        <div class="question-text"><strong>Question:</strong> What is your favourite room in your home?</div>
+                    </div>
+                    <div class="ladder-practice-body">
+                        <div class="ladder-inputs">
+                            <div class="ladder-input-row">
+                                <span class="dot fact-dot"></span> <strong>Fact:</strong> My favourite room is <input type="text" class="keyword-input save-state" id="p6-q1-fact">.
+                            </div>
+                            <div class="ladder-input-row">
+                                <span class="dot detail-dot"></span> <strong>Detail:</strong> I usually <input type="text" class="keyword-input save-state" id="p6-q1-detail"> there.
+                            </div>
+                            <div class="ladder-input-row">
+                                <span class="dot feeling-dot"></span> <strong>Feeling:</strong> It feels <input type="text" class="keyword-input save-state" id="p6-q1-feel">.
+                            </div>
+                        </div>
+                        <div class="ladder-final">
+                            <strong>Final answer:</strong>
+                            <textarea class="final-textarea save-state" id="p6-q1-final" rows="4"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="card ladder-practice">
+                    <div class="ladder-practice-header">
+                        <div class="badge-blue"><span class="icon-pen">✏️</span> Practice with Question 2</div>
+                        <div class="question-text"><strong>Question:</strong> Are the people in your neighbourhood friendly?</div>
+                    </div>
+                    <div class="ladder-practice-body">
+                        <div class="ladder-inputs">
+                            <div class="ladder-input-row">
+                                <span class="dot fact-dot"></span> <strong>Fact:</strong> I <input type="text" class="keyword-input save-state" id="p6-q2-fact"> my neighbours very often.
+                            </div>
+                            <div class="ladder-input-row">
+                                <span class="dot detail-dot"></span> <strong>Detail:</strong> My parents <input type="text" class="keyword-input save-state" id="p6-q2-detail">.
+                            </div>
+                            <div class="ladder-input-row">
+                                <span class="dot feeling-dot"></span> <strong>Feeling / conclusion:</strong> From what my parents say, they seem <input type="text" class="keyword-input save-state" id="p6-q2-feel">.
+                            </div>
+                        </div>
+                        <div class="ladder-final">
+                            <strong>Final answer:</strong>
+                            <textarea class="final-textarea save-state" id="p6-q2-final" rows="4"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="card ladder-practice">
+                    <div class="ladder-practice-header">
+                        <div class="badge-blue"><span class="icon-pen">✏️</span> Practice with Question 3</div>
+                        <div class="question-text"><strong>Question:</strong> Are there any things you don't like about your area?</div>
+                    </div>
+                    <div class="ladder-practice-body">
+                        <div class="ladder-inputs">
+                            <div class="ladder-input-row">
+                                <span class="dot fact-dot"></span> <strong>Fact:</strong> One thing I don't like is <input type="text" class="keyword-input save-state" id="p6-q3-fact">.
+                            </div>
+                            <div class="ladder-input-row">
+                                <span class="dot detail-dot"></span> <strong>Detail:</strong> Sometimes <input type="text" class="keyword-input save-state" id="p6-q3-detail">.
+                            </div>
+                            <div class="ladder-input-row">
+                                <span class="dot feeling-dot"></span> <strong>Result:</strong> It makes it difficult to <input type="text" class="keyword-input save-state" id="p6-q3-feel">.
+                            </div>
+                        </div>
+                        <div class="ladder-final">
+                            <strong>Final answer:</strong>
+                            <textarea class="final-textarea save-state" id="p6-q3-final" rows="4"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE 7 -->
+            <section class="page hidden" id="page-7">
+                <header class="page-header">
+                    <div class="badge-group center-badge">
+                        <span class="badge" style="background-color: var(--primary-blue); color: white;">PAGE 7 - OPTIONAL</span>
+                    </div>
+                    <h1>Stretch Forecast Questions</h1>
+                </header>
+
+                <div class="instruction-box card" style="justify-content: center; text-align: center; margin-bottom: 2rem;">
+                    <p style="font-size: 1.1rem; font-style: italic;">Use these only if the core questions are already clear.</p>
+                </div>
+
+                <!-- Q1 -->
+                <div class="card stretch-card">
+                    <div class="stretch-header">
+                        <span class="q-badge" style="background-color: #2E86C1;">1</span> <h3>Stretch Question 1: Do you know any of your neighbours?</h3>
+                    </div>
+                    <div class="stretch-body">
+                        <div class="stretch-col safe-col">
+                            <h5><span class="icon-shield">🛡️</span> Safe truthful answer</h5>
+                            <p>If I do not know them well, I can say that.</p>
+                        </div>
+                        <div class="stretch-col keywords-col">
+                            <h5><span class="icon-key">🔑</span> Keywords</h5>
+                            <ul><li>not really</li><li>busy with school</li><li>parents know them better</li><li>friendly</li></ul>
+                        </div>
+                        <div class="stretch-col phrase-col">
+                            <h5><span class="icon-chat">💬</span> Useful phrase</h5>
+                            <div class="phrase-box" style="border-color: #2E86C1; color: #2E86C1;">“I don't know them very well, but...”</div>
+                        </div>
+                        <div class="stretch-col try-col">
+                            <h5><span class="icon-pen">✏️</span> Try lines</h5>
+                            <ol>
+                                <li>“I don't know my neighbours very well because <input type="text" class="keyword-input save-state" id="p7-q1-1">.”</li>
+                                <li>“But my parents <input type="text" class="keyword-input save-state" id="p7-q1-2">, and they seem <input type="text" class="keyword-input save-state" id="p7-q1-3">.”</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="card stretch-card">
+                    <div class="stretch-header">
+                        <span class="q-badge" style="background-color: #2E86C1;">2</span> <h3>Stretch Question 2: Do you think you will continue to live there for a long time?</h3>
+                    </div>
+                    <div class="stretch-body">
+                        <div class="stretch-col keywords-col">
+                            <h5><span class="icon-key">🔑</span> Keywords</h5>
+                            <ul><li>grade 12</li><li>university</li><li>Hanoi / Ho Chi Minh City</li><li>come back later</li><li>hometown</li></ul>
+                        </div>
+                        <div class="stretch-col phrase-col">
+                            <h5><span class="icon-chat">💬</span> Useful phrase</h5>
+                            <div class="phrase-box" style="border-color: #2E86C1; color: #2E86C1;">“Probably not in the near future...”</div>
+                        </div>
+                        <div class="stretch-col try-col">
+                            <h5><span class="icon-pen">✏️</span> Try lines</h5>
+                            <ol>
+                                <li>“Probably not in the near future because <input type="text" class="keyword-input save-state" id="p7-q2-1">.”</li>
+                                <li>“But after I graduate, I may <input type="text" class="keyword-input save-state" id="p7-q2-2">.”</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="card stretch-card">
+                    <div class="stretch-header">
+                        <span class="q-badge" style="background-color: #2E86C1;">3</span> <h3>Stretch Question 3: What are some changes in the area recently?</h3>
+                    </div>
+                    <div class="stretch-body">
+                        <div class="stretch-col keywords-col">
+                            <h5><span class="icon-key">🔑</span> Keywords</h5>
+                            <ul><li>more buildings</li><li>more shops</li><li>more vehicles</li><li>more crowded</li></ul>
+                        </div>
+                        <div class="stretch-col phrase-col">
+                            <h5><span class="icon-chat">💬</span> Useful phrase</h5>
+                            <div class="phrase-box" style="border-color: #2E86C1; color: #2E86C1;">“Recently, I have noticed that...”</div>
+                        </div>
+                        <div class="stretch-col try-col">
+                            <h5><span class="icon-pen">✏️</span> Try lines</h5>
+                            <ol>
+                                <li>“Recently, I have noticed that there are more <input type="text" class="keyword-input save-state" id="p7-q3-1"> in my area.”</li>
+                                <li>“It makes the city feel more <input type="text" class="keyword-input save-state" id="p7-q3-2">, but also more <input type="text" class="keyword-input save-state" id="p7-q3-3">.”</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="card stretch-card">
+                    <div class="stretch-header">
+                        <span class="q-badge" style="background-color: #2E86C1;">4</span> <h3>Stretch Question 4: Do you know any famous people in your area?</h3>
+                    </div>
+                    <div class="stretch-body">
+                        <div class="stretch-col safe-col">
+                            <h5><span class="icon-shield">🛡️</span> Safe answer</h5>
+                            <p>It is okay to say no.</p>
+                        </div>
+                        <div class="stretch-col keywords-col">
+                            <h5><span class="icon-key">🔑</span> Keywords</h5>
+                            <ul><li>not personally</li><li>maybe local singers / athletes / officials</li><li>not sure</li><li>do not follow local news much</li></ul>
+                        </div>
+                        <div class="stretch-col phrase-col">
+                            <h5><span class="icon-chat">💬</span> Useful phrase</h5>
+                            <div class="phrase-box" style="border-color: #2E86C1; color: #2E86C1;">“I don't know any famous people personally.”</div>
+                        </div>
+                        <div class="stretch-col try-col">
+                            <h5><span class="icon-pen">✏️</span> Try lines</h5>
+                            <ol>
+                                <li>“I don't know any famous people personally in my area.”</li>
+                                <li>“Maybe there are some <input type="text" class="keyword-input save-state" id="p7-q4-1">, but I don't really <input type="text" class="keyword-input save-state" id="p7-q4-2">.”</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE 8 -->
+            <section class="page hidden" id="page-8">
+                <header class="page-header">
+                    <div class="badge-group center-badge">
+                        <span class="badge" style="background-color: var(--primary-blue); color: white;">PAGE 8 - HOMEWORK</span>
+                    </div>
+                    <h1>Delayed Recall Practice</h1>
+                </header>
+
+                <div class="instruction-box card" style="background-color: #FFFDF5; border-color: var(--accent-gold); color: var(--text-main);">
+                    <div class="icon-wrapper" style="color: var(--accent-gold); font-size: 2rem;">⏳</div>
+                    <ul>
+                        <li>Do this after class.</li>
+                        <li>Do not do it immediately after the lesson.</li>
+                    </ul>
+                </div>
+
+                <div class="hw-steps-container">
+                    <div class="hw-step"><div class="hw-step-icon">📖</div> <h4>Step 1</h4><p>Look at Pages 3-5 for 3 minutes.</p></div>
+                    <div class="hw-step-arrow">➔</div>
+                    <div class="hw-step"><div class="hw-step-icon">📕</div> <h4>Step 2</h4><p>Close the handout.</p></div>
+                    <div class="hw-step-arrow">➔</div>
+                    <div class="hw-step"><div class="hw-step-icon">✏️</div> <h4>Step 3</h4><p>Write 8-10 keywords from memory.</p></div>
+                    <div class="hw-step-arrow">➔</div>
+                    <div class="hw-step"><div class="hw-step-icon">💬</div> <h4>Step 4</h4><p>Record answers to these 4 questions.</p></div>
+                </div>
+
+                <div class="grid-2-col hw-main-grid">
+                    <div class="card hw-keywords-card">
+                        <div class="hw-header" style="background-color: var(--accent-teal);">
+                            <span class="icon-pen">✏️</span> Step 3 - My keywords
+                        </div>
+                        <div class="hw-body">
+                            <h4 style="color: var(--accent-teal); margin-bottom: 1rem;">My keywords:</h4>
+                            <ol class="hw-keyword-list">
+                                <li><input type="text" class="keyword-input save-state" id="p8-kw-1"></li>
+                                <li><input type="text" class="keyword-input save-state" id="p8-kw-2"></li>
+                                <li><input type="text" class="keyword-input save-state" id="p8-kw-3"></li>
+                                <li><input type="text" class="keyword-input save-state" id="p8-kw-4"></li>
+                                <li><input type="text" class="keyword-input save-state" id="p8-kw-5"></li>
+                                <li><input type="text" class="keyword-input save-state" id="p8-kw-6"></li>
+                                <li><input type="text" class="keyword-input save-state" id="p8-kw-7"></li>
+                                <li><input type="text" class="keyword-input save-state" id="p8-kw-8"></li>
+                                <li><input type="text" class="keyword-input save-state" id="p8-kw-9"></li>
+                                <li><input type="text" class="keyword-input save-state" id="p8-kw-10"></li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="card hw-record-card">
+                        <div class="hw-header" style="background-color: #2E86C1;">
+                            <span class="icon-chat">💬</span> Step 4 - Record answers
+                        </div>
+                        <div class="hw-body">
+                            <ol class="hw-record-list">
+                                <li>
+                                    <strong>Which town or city do you live in now?</strong>
+                                    <textarea class="final-textarea save-state" id="p8-ans-1" rows="2"></textarea>
+                                </li>
+                                <li>
+                                    <strong>Do you live in a house or an apartment?</strong>
+                                    <textarea class="final-textarea save-state" id="p8-ans-2" rows="2"></textarea>
+                                </li>
+                                <li>
+                                    <strong>What is your favourite room in your home?</strong>
+                                    <textarea class="final-textarea save-state" id="p8-ans-3" rows="2"></textarea>
+                                </li>
+                                <li>
+                                    <strong>Are the people in your neighbourhood nice and friendly?</strong>
+                                    <textarea class="final-textarea save-state" id="p8-ans-4" rows="2"></textarea>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card hw-rules-card" style="background-color: #EBF5FB; border-color: var(--accent-teal);">
+                    <div class="hw-header" style="background-color: transparent; border-bottom: none; color: var(--accent-teal);">
+                        <span class="icon-shield">🛡️</span> <h3 style="display:inline; margin-left: 0.5rem;">Rules</h3>
+                    </div>
+                    <div class="grid-2-col" style="padding: 0 1.5rem 1.5rem 1.5rem; margin: 0;">
+                        <div class="rules-col">
+                            <label class="checkbox-container"><input type="checkbox" class="custom-checkbox save-state" id="hw-rule-1"><span class="checkmark"></span><span class="text" style="color: var(--text-main);">Do not write full answers before recording.</span></label>
+                            <label class="checkbox-container"><input type="checkbox" class="custom-checkbox save-state" id="hw-rule-2"><span class="checkmark"></span><span class="text" style="color: var(--text-main);">Use keywords only.</span></label>
+                            <label class="checkbox-container"><input type="checkbox" class="custom-checkbox save-state" id="hw-rule-3"><span class="checkmark"></span><span class="text" style="color: var(--text-main);">Do not end with "yeah."</span></label>
+                        </div>
+                        <div class="rules-col">
+                            <label class="checkbox-container"><input type="checkbox" class="custom-checkbox save-state" id="hw-rule-4"><span class="checkmark"></span><span class="text" style="color: var(--text-main);">Give one real detail in each answer.</span></label>
+                            <label class="checkbox-container"><input type="checkbox" class="custom-checkbox save-state" id="hw-rule-5"><span class="checkmark"></span><span class="text" style="color: var(--text-main);">If you forget a word, describe it in simple English.</span></label>
+                            <label class="checkbox-container"><input type="checkbox" class="custom-checkbox save-state" id="hw-rule-6"><span class="checkmark"></span><span class="text" style="color: var(--text-main);">Speak clearly, not perfectly.</span></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mistake-check-card">
+                    <div class="hw-header" style="background-color: #154360;">
+                        <span class="icon-search">🔍</span> <h3 style="display:inline; margin-left: 0.5rem; color: white;">Before sending, check these mistakes</h3>
+                    </div>
+                    <table class="memory-table mistake-table">
+                        <thead>
+                            <tr>
+                                <th style="background-color: #EBF5FB; color: var(--primary-blue);">Check</th>
+                                <th style="background-color: #EBF5FB; color: var(--primary-blue);">Correct form</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>I thinks</td><td>I think</td></tr>
+                            <tr><td>my families</td><td>my family</td></tr>
+                            <tr><td>my cities</td><td>my city</td></tr>
+                            <tr><td>my moms</td><td>my mom</td></tr>
+                            <tr><td>house that have</td><td>house that has</td></tr>
+                            <tr><td>long terms</td><td>a long time</td></tr>
+                            <tr><td>transfer around the city</td><td>travel around the city</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- PAGE 9 -->
+            <section class="page hidden" id="page-9">
+                <header class="page-header">
+                    <div class="badge-group center-badge">
+                        <span class="badge" style="background-color: var(--primary-blue); color: white;">PAGE 9 - REFERENCE</span>
+                    </div>
+                    <h1>Van's Speaking Repair List</h1>
+                </header>
+
+                <div class="instruction-box card" style="justify-content: center; text-align: center; margin-bottom: 2rem;">
+                    <p style="font-size: 1.1rem; font-weight: 500; color: var(--primary-blue);"><span class="icon-target">💡</span> Use this page before recording homework or before the next lesson.</p>
+                </div>
+
+                <div class="repair-list">
+                    <!-- Section 1 -->
+                    <div class="card repair-card" style="border-color: var(--accent-teal);">
+                        <div class="repair-header">
+                            <span class="icon-target" style="color: var(--accent-teal); font-size: 1.5rem;">🎯</span> 
+                            <h3 style="color: var(--accent-teal);">1. Clean endings</h3>
+                        </div>
+                        <p style="padding: 0 1.5rem;">When my idea is finished, I stop.</p>
+                        <div class="examples-grid" style="padding-top: 1rem;">
+                            <div class="example-box">
+                                <div class="example bad">
+                                    <h4><span class="icon-x">❌</span> Bad:</h4>
+                                    <p>I live in Viet Tri. Yeah.</p>
+                                </div>
+                                <div class="example better">
+                                    <h4><span class="icon-check">✅</span> Better:</h4>
+                                    <p>I live in Viet Tri, in Phu Tho province.</p>
+                                </div>
+                            </div>
+                            <div class="example-box">
+                                <div class="example bad">
+                                    <h4><span class="icon-x">❌</span> Bad:</h4>
+                                    <p>My favourite room is the living room. Yeah.</p>
+                                </div>
+                                <div class="example better">
+                                    <h4><span class="icon-check">✅</span> Better:</h4>
+                                    <p>My favourite room is the living room because I can spend time with my family there.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 2 -->
+                    <div class="card repair-card" style="border-color: #2E86C1;">
+                        <div class="repair-header">
+                            <span class="icon-chat" style="color: #2E86C1; font-size: 1.5rem;">💬</span> 
+                            <h3 style="color: #2E86C1;">2. If I forget a word</h3>
+                        </div>
+                        <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+                            <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem;">
+                                <div><p>I do not need to stop.<br>I can say:</p></div>
+                                <div class="phrase-box" style="border-color: #2E86C1; color: #2E86C1; font-style: italic;">“I don't know the exact English word, but it is a kind of...”</div>
+                            </div>
+                            <ul style="padding-left: 1.5rem; line-height: 1.8;">
+                                <li>I don't know the exact English word, <em>but it is a kind of</em> small garden.</li>
+                                <li>I don't know the exact English word, <em>but it is a kind of</em> family room.</li>
+                                <li>I don't know the exact English word, <em>but it is a place where</em> my family spends time together.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Section 3 -->
+                    <div class="card repair-card" style="border-color: #2874A6;">
+                        <div class="repair-header">
+                            <span class="icon-pen" style="color: #2874A6; font-size: 1.5rem;">✏️</span> 
+                            <h3 style="color: #2874A6;">3. Useful self-correction phrase</h3>
+                        </div>
+                        <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+                            <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem;">
+                                <div><p>If I make a mistake, I can fix it.</p></div>
+                                <div class="phrase-box" style="border-color: #2874A6; color: #2874A6; font-style: italic;">“What I mean is...”</div>
+                            </div>
+                            <ul style="padding-left: 1.5rem;">
+                                <li>My families - what I mean is, my family - often spends time in the living room.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Section 4 -->
+                    <div class="card repair-card" style="border-color: var(--accent-teal);">
+                        <div class="repair-header">
+                            <span class="icon-chat" style="color: var(--accent-teal); font-size: 1.5rem;">💬</span> 
+                            <h3 style="color: var(--accent-teal);">4. Small phrases I can use today</h3>
+                        </div>
+                        <div class="grid-2-col" style="padding: 0 1.5rem 1.5rem 1.5rem; margin: 0; line-height: 1.8;">
+                            <ul style="padding-left: 1rem;">
+                                <li>I currently live in...</li>
+                                <li>It is located in...</li>
+                                <li>It is also my hometown.</li>
+                                <li>I live in a house with two floors.</li>
+                                <li>There is a small garden.</li>
+                                <li>My favourite room is the living room.</li>
+                            </ul>
+                            <ul style="padding-left: 1rem;">
+                                <li>I can spend time with my family there.</li>
+                                <li>It feels lively.</li>
+                                <li>I don't meet my neighbours very often.</li>
+                                <li>From what my parents say, they are friendly.</li>
+                                <li>One thing I don't really like is the traffic.</li>
+                                <li>It is not very convenient to travel around the city.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Section 5 -->
+                    <div class="card repair-card" style="border-color: #154360; background-color: #EBF5FB;">
+                        <div class="repair-header" style="border-bottom: none;">
+                            <span class="icon-star" style="color: #154360; font-size: 1.5rem;">⭐</span> 
+                            <h3 style="color: #154360;">5. Final reminder</h3>
+                        </div>
+                        <div style="padding: 0 1.5rem 1.5rem 1.5rem; text-align: center;">
+                            <p>Do not try to sound advanced.<br>Try to sound:</p>
+                            <div class="phrase-box" style="border-color: #154360; color: #154360; font-weight: bold; margin: 1rem auto; width: max-content;">“clear, specific, truthful, and controlled”</div>
+                            <p>That is enough for today.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pagination Controls -->
+            <div class="pagination-controls">
+                <button class="nav-arrow" id="prev-btn" disabled>← Previous</button>
+                <span class="page-indicator">Page <span id="current-page-num">1</span> of 3</span>
+                <button class="nav-arrow" id="next-btn">Next →</button>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="/script.js"></script>
+</body>
+</html>
