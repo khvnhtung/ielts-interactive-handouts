@@ -173,16 +173,12 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (isTeacher) {
                 inputsToSave.forEach(input => {
-                    input.readOnly = true;
-                    input.disabled = true;
                     if(input.type === 'text' || input.tagName === 'TEXTAREA') {
-                        input.style.backgroundColor = '#fff3cd'; // Highlight student inputs in yellow
+                        input.style.backgroundColor = '#fff3cd'; // Highlight inputs in yellow
                     }
                 });
             } else {
                 inputsToSave.forEach(input => {
-                    input.readOnly = false;
-                    input.disabled = false;
                     if(input.type === 'text' || input.tagName === 'TEXTAREA') {
                         input.style.backgroundColor = ''; 
                     }
@@ -211,23 +207,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
 
-                // 2. Emit updates when student types
-                if (!isTeacher) {
-                    inputsToSave.forEach(input => {
-                        input.addEventListener('input', () => {
-                            const id = input.id || input.name + '-' + input.value;
-                            if (!id) return;
+                // 2. Emit updates when ANY user types
+                inputsToSave.forEach(input => {
+                    input.addEventListener('input', () => {
+                        const id = input.id || input.name + '-' + input.value;
+                        if (!id) return;
 
-                            const val = (input.type === 'checkbox' || input.type === 'radio') ? input.checked : input.value;
-                            
-                            // Write to Firebase
-                            set(ref(db, `handouts/${sessionId}/${id}`), {
-                                value: val,
-                                type: input.type
-                            });
+                        const val = (input.type === 'checkbox' || input.type === 'radio') ? input.checked : input.value;
+                        
+                        // Write to Firebase
+                        set(ref(db, `handouts/${sessionId}/${id}`), {
+                            value: val,
+                            type: input.type
                         });
                     });
-                }
+                });
             }
         } else {
             // User is signed out
